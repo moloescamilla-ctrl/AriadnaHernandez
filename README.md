@@ -15,7 +15,9 @@ Sitio de venta del libro de **Ariadna Hernández**. Misma base que Faro del Infi
 
 Todo el texto, precios y datos de contacto están en `src/data/config.js`. Lo marcado con `TODO` es provisional.
 
-- **Portada**: guarda la imagen como `src/assets/portada.jpg` (o `.png`/`.webp`). Se detecta sola.
+- **Portada**: `src/assets/portada.jpg` (mockup 3D sobre fondo blanco). Se detecta sola.
+- **Foto del libro en ambiente**: `src/assets/libro-ambiente.jpg` (se usa junto al índice).
+- **Ornamentos**: `src/components/Brush.jsx` dibuja en SVG soles, ondas y trazos de pincel inspirados en las ilustraciones del libro (no usa las ilustraciones originales).
 - **Foto de la autora**: `src/assets/autora.jpg`.
 - **Precios**: si los cambias en `config.js`, cámbialos igual en `PRECIOS` de `apps-script/Code.gs` (el servidor es el que cobra).
 

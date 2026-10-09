@@ -13,7 +13,7 @@ export default function Header({ overlay = false }) {
           {overlay && (
             <>
               <a href="#libro">El libro</a>
-              <a href="#autora">La autora</a>
+              <a href="#indice">Índice</a>
             </>
           )}
           <a href={overlay ? "#formatos" : "/#formatos"} className="navcta">

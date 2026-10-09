@@ -22,19 +22,17 @@ export const SOCIAL = {
 export const BOOK = {
   title: "Mi Dios no es el que me contaron",
   author: "Ariadna Hernández",
-  // TODO: subtítulo real del libro (o "" si no tiene).
-  subtitle: "Un camino honesto para reencontrarte con la fe",
-  // La portada se detecta sola: guárdala como src/assets/portada.jpg
-  // (o .png/.webp). Mientras no exista, se muestra una portada provisional.
-  // TODO: datos editoriales reales.
+  legalName: "Ariadna Hernández Rodríguez",
+  subtitle: "Un viaje íntimo para descubrir un Dios vivo, cercano y transformador.",
+  // La portada se detecta sola en src/assets/portada.jpg.
   details: [
-    { label: "Páginas", value: "—" },
-    { label: "Editorial", value: "—" },
-    { label: "ISBN", value: "—" },
+    { label: "ISBN", value: "978-607-29-9118-7" },
+    { label: "Edición", value: "Fernando Alonso Muñoz Marmolejo" },
+    { label: "Año", value: "2025" },
+    { label: "Impreso en", value: "México" },
   ],
 };
 
-// Formatos de venta. "precio" en MXN. "envio" solo aplica al físico.
 // TODO: confirmar precios reales y costo de envío.
 export const FORMATS = {
   ebook: {
@@ -55,44 +53,60 @@ export const FORMATS = {
   },
 };
 
-// TODO: link real del libro en Amazon (si es "", la tarjeta de Amazon no aparece).
-export const AMAZON_URL = "";
+// Otras tiendas. Las que tengan url "" no aparecen.
+// TODO: confirmar que el link de Mercado Libre abre la publicación correcta
+// (se armó con el código MLM6362964260) y agregar el de Amazon.
+export const STORES = [
+  {
+    key: "mercadolibre",
+    name: "Mercado Libre",
+    note: "Compra con tu cuenta de Mercado Libre y su envío.",
+    url: "https://articulo.mercadolibre.com.mx/MLM-6362964260",
+  },
+  {
+    key: "amazon",
+    name: "Amazon",
+    note: "Si ya compras en Amazon, también lo encuentras ahí.",
+    url: "",
+  },
+];
 
-// TODO: sinopsis real (contraportada).
+// Sinopsis (contraportada). El primer elemento es la pregunta de entrada.
 export const SYNOPSIS = [
-  "¿Y si el Dios que te enseñaron a temer no es el mismo que te está buscando?",
-  "En este libro, Ariadna Hernández comparte el camino que la llevó a cuestionar las ideas sobre Dios que recibió desde niña: la culpa, el miedo al castigo, la sensación de nunca ser suficiente. Con honestidad y sin fórmulas, invita al lector a separar lo que le contaron de lo que de verdad ha vivido.",
-  "No es un libro para quitarte la fe, sino para ayudarte a encontrar una que puedas habitar.",
+  "¿Qué es Dios? ¿Acaso no es el ser distante y castigador que nos enseñaron?",
+  "En Mi Dios no es el que me contaron, la autora nos invita a un viaje íntimo y revelador que desafía las creencias tradicionales para descubrir un Dios vivo, cercano y transformador. A través de experiencias personales y vivencias que oscilan entre lo cotidiano y lo milagroso, la autora desmantela la imagen limitada de lo divino y nos muestra que Dios se esconde en cada amanecer, en el abrazo de un ser querido, en el murmullo del viento y en la resiliencia del espíritu humano.",
+  "Esta obra es un llamado a abrir los ojos a una presencia que se manifiesta en el amor, en la fe y en la fuerza interior. Descubre cómo, al cuestionar lo establecido, se revela un Dios que no solo nos acompaña, sino que transforma nuestra vida de formas insospechadas.",
 ];
 
-// TODO: ajustar a los temas reales del libro.
-export const THEMES = [
-  {
-    title: "Soltar el miedo",
-    text: "Reconocer las ideas que te enseñaron desde la culpa y el castigo, y por qué siguen pesando.",
-  },
-  {
-    title: "Hacer preguntas",
-    text: "Dudar no es perder la fe: es el primer paso para que deje de ser prestada y se vuelva tuya.",
-  },
-  {
-    title: "Reencontrarte",
-    text: "Construir una relación con lo sagrado basada en el amor, no en la obligación.",
-  },
-];
+export const CLOSING_QUESTION =
+  "¿Estás listo para replantearte todo lo que creías saber y abrazar un Dios que es, en esencia, vida, amor y libertad?";
 
-// TODO: fragmento real del libro (un párrafo corto funciona mejor).
-export const EXCERPT = {
-  text: "Durante años creí que Dios llevaba una lista de todo lo que hacía mal. Tardé mucho en entender que esa lista nunca fue suya: la escribieron otros, con su miedo, y me la entregaron como si fuera verdad.",
-  source: "Fragmento del capítulo 1",
+export const QUOTE = {
+  text: "Dios se esconde en cada amanecer, en el abrazo de un ser querido, en el murmullo del viento y en la resiliencia del espíritu humano.",
+  source: "De la contraportada",
 };
 
-// TODO: biografía real. La foto se detecta sola en src/assets/autora.jpg.
+export const CONTENTS = [
+  { label: "Introducción" },
+  { num: "I", title: "¿Y qué es Dios?", page: 13 },
+  { num: "II", title: "Manifestaciones de Dios", page: 27 },
+  { num: "III", title: "Los caminos", page: 49 },
+  { num: "IV", title: "El cambio", page: 57 },
+  { num: "V", title: "La transición", page: 69 },
+  { num: "VI", title: "La fe", page: 77 },
+  { num: "VII", title: "El poder de la oración", page: 85 },
+  { num: "VIII", title: "La brújula", page: 101 },
+  { num: "IX", title: "Afirmación, intención y vibración", page: 111 },
+  { num: "X", title: "La conciencia", page: 127 },
+  { num: "XI", title: "Todos los caminos llegan a Roma", page: 143 },
+  { num: "XII", title: "Dios", page: 155 },
+];
+
+// TODO: biografía de Ariadna (2 o 3 párrafos cortos). Mientras el arreglo
+// esté vacío, la sección "La autora" no aparece. La foto se detecta sola en
+// src/assets/autora.jpg.
 export const AUTHOR = {
-  bio: [
-    "Ariadna Hernández es escritora y acompaña a personas que buscan reconciliarse con su espiritualidad después de experiencias religiosas difíciles.",
-    "Mi Dios no es el que me contaron es su primer libro, nacido de su propia historia y de las conversaciones con quienes, como ella, sintieron que tenían que elegir entre su fe y su paz.",
-  ],
+  bio: [],
 };
 
 // Testimonios de lectores. Si el arreglo está vacío, la sección no aparece.
@@ -114,13 +128,12 @@ export const FAQ = [
     a: "Tarjeta de crédito o débito, saldo de Mercado Pago y efectivo en OXXO, todo a través de Mercado Pago de forma segura.",
   },
   {
-    q: "¿Puedo comprarlo en Amazon?",
-    a: "Sí. Si prefieres comprar por Amazon, encontrarás el enlace en la sección de formatos.",
+    q: "¿Lo venden en otras tiendas?",
+    a: "Sí. También puedes encontrarlo en Mercado Libre; los enlaces están en la sección para conseguir el libro.",
   },
   {
-    q: "¿Es un libro religioso?",
-    // TODO: que Ariadna confirme cómo quiere describirlo.
-    a: "Es un libro sobre espiritualidad y fe, escrito para cualquier persona que se haya sentido lejos de Dios por lo que le enseñaron, sin importar su religión o si hoy pertenece a alguna.",
+    q: "¿De qué trata?",
+    a: "Es un viaje personal que cuestiona la imagen de un Dios distante y castigador para descubrir uno vivo y cercano, a través de experiencias de la autora que van de lo cotidiano a lo milagroso. Habla de la fe, la oración, la intención y la conciencia.",
   },
   {
     q: "No me llegó mi correo, ¿qué hago?",

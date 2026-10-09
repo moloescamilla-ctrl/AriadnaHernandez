@@ -90,7 +90,7 @@ legend {
 .field select:focus {
   outline: none;
   border-color: var(--gold-deep);
-  box-shadow: 0 0 0 3px rgba(231, 185, 100, 0.3);
+  box-shadow: 0 0 0 3px rgba(244, 157, 32, 0.3);
 }
 
 .field-row {
@@ -130,7 +130,7 @@ legend {
   align-items: center;
 }
 
-.summary__book .book--sm {
+.summary__book .book--sm, .summary__book .book-mockup--sm {
   width: 82px;
   flex-shrink: 0;
 }

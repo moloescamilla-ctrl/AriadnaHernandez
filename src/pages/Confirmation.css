@@ -1,7 +1,7 @@
 .confirmation {
   min-height: 100vh;
   background:
-    radial-gradient(60% 40% at 50% 0%, rgba(231, 185, 100, 0.22), transparent 70%),
+    radial-gradient(60% 40% at 50% 0%, rgba(244, 157, 32, 0.22), transparent 70%),
     var(--paper);
 }
 
@@ -25,12 +25,12 @@
   font-weight: 700;
   color: #fff;
   background: var(--ink);
-  box-shadow: 0 0 0 10px rgba(231, 185, 100, 0.25);
+  box-shadow: 0 0 0 10px rgba(244, 157, 32, 0.25);
 }
 
 .confirmation__badge--approved {
   background: linear-gradient(180deg, #f0c878, var(--gold-deep));
-  color: #23190a;
+  color: #1d1405;
 }
 
 .confirmation__badge--failure {

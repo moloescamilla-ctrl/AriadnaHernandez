@@ -24,7 +24,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="container site-footer__legal">
-        © {new Date().getFullYear()} {BOOK.author}. Todos los derechos reservados.
+        © {new Date().getFullYear()} {BOOK.legalName}. Todos los derechos reservados.
       </div>
     </footer>
   );

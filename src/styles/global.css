@@ -1,19 +1,24 @@
 :root {
-  --paper: #f7f2ea;
-  --paper-alt: #efe7d9;
-  --surface: #fffdf9;
-  --ink: #1b1f36;
-  --ink-soft: #2a2f4d;
-  --text: #24283d;
-  --text-muted: #646a7e;
-  --gold: #e7b964;
-  --gold-deep: #b9863a;
-  --accent: #8a4b2f;
-  --accent-dark: #6c3820;
+  /* Paleta tomada de la portada: crema, azul profundo y naranja. */
+  --paper: #fbf8f2;
+  --paper-alt: #f3ede1;
+  --surface: #ffffff;
+  /* Tinta azul violeta de las ilustraciones + azul de portada */
+  --blue: #3a43a3;
+  --lavender: #a9a6de;
+  --ink: #262b6f;
+  --ink-soft: #3a43a3;
+  --text: #22283a;
+  --text-muted: #5f6577;
+  --orange: #f49d20;
+  --gold: #f49d20;
+  --gold-deep: #d98200;
+  --accent: #a85600;
+  --accent-dark: #7f4100;
   --whatsapp: #25d366;
   --border: #e2d8c6;
   --shadow-md: 0 14px 34px -14px rgba(27, 31, 54, 0.22);
-  --shadow-lg: 0 30px 60px -24px rgba(10, 12, 28, 0.55);
+  --shadow-lg: 0 30px 60px -24px rgba(16, 28, 60, 0.45);
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 26px;
@@ -136,9 +141,9 @@ p {
 }
 
 .btn-gold {
-  background: linear-gradient(180deg, #f0c878, var(--gold-deep));
-  color: #23190a;
-  box-shadow: 0 12px 28px -10px rgba(185, 134, 58, 0.7);
+  background: linear-gradient(180deg, #f7ad3e, var(--gold-deep));
+  color: #1d1405;
+  box-shadow: 0 12px 28px -10px rgba(217, 130, 0, 0.6);
 }
 
 .btn-gold:hover {
@@ -148,7 +153,7 @@ p {
 .btn-primary {
   background: var(--ink);
   color: #fff;
-  box-shadow: 0 12px 26px -12px rgba(27, 31, 54, 0.7);
+  box-shadow: 0 12px 26px -12px rgba(38, 43, 111, 0.6);
 }
 
 .btn-primary:hover {
@@ -198,4 +203,11 @@ p {
     opacity: 1;
     transform: none;
   }
+}
+
+/* Ornamentos de pincel (components/Brush.jsx) */
+.orn {
+  display: block;
+  overflow: visible;
+  pointer-events: none;
 }
