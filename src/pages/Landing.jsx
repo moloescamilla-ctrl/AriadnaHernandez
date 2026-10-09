@@ -210,15 +210,6 @@ export default function Landing() {
               </div>
             </div>
           )}
-
-          <dl className="details reveal">
-            {BOOK.details.map((d) => (
-              <div key={d.label}>
-                <dt>{d.label}</dt>
-                <dd>{d.value}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
       </section>
 
