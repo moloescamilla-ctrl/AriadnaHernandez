@@ -1,0 +1,84 @@
+.book {
+  position: relative;
+  aspect-ratio: 2 / 3;
+  border-radius: 4px 10px 10px 4px;
+  box-shadow: var(--shadow-lg), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  background: #262a46;
+}
+
+.book--lg {
+  width: min(330px, 72vw);
+}
+
+.book--sm {
+  width: 120px;
+}
+
+.book__spine {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 14px;
+  z-index: 2;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.35), rgba(255, 255, 255, 0.12) 60%, rgba(0, 0, 0, 0.1));
+}
+
+.book__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12% 12% 12% 16%;
+  color: #f7f2ea;
+  background:
+    radial-gradient(120% 70% at 50% 18%, rgba(231, 185, 100, 0.42), transparent 60%),
+    linear-gradient(180deg, #2d3254 0%, #1b1f36 70%);
+}
+
+.book__sun {
+  width: 22%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffe2a6 0%, var(--gold) 55%, rgba(231, 185, 100, 0) 72%);
+  margin-bottom: 14%;
+  box-shadow: 0 0 60px 18px rgba(231, 185, 100, 0.35);
+}
+
+.book__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.02;
+  font-size: 2.15em;
+}
+
+.book--lg .book__face {
+  font-size: 16px;
+}
+
+.book--sm .book__face {
+  font-size: 6px;
+}
+
+.book__rule {
+  width: 30%;
+  height: 1px;
+  background: var(--gold);
+  margin: 12% 0 8%;
+}
+
+.book__author {
+  font-size: 0.82em;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
