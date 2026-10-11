@@ -4,13 +4,10 @@
 // que reemplazarlo con la información real de Ariadna antes de publicar.
 // ─────────────────────────────────────────────────────────────────────────
 
-// URL del Web App de Google Apps Script (termina en /exec).
-// TODO: pegar aquí la URL después del primer despliegue del Apps Script.
-export const APPS_SCRIPT_URL = "";
-
 // TODO: número real de WhatsApp (formato internacional sin "+", con 521 para MX).
-export const WHATSAPP_NUMBER = "5210000000000";
-export const WHATSAPP_DISPLAY = "000 000 0000";
+// Mientras esté vacío, el botón flotante y el enlace del pie no aparecen.
+export const WHATSAPP_NUMBER = "";
+export const WHATSAPP_DISPLAY = "";
 
 // TODO: redes de la autora (deja "" las que no use; no se muestran).
 export const SOCIAL = {
@@ -33,43 +30,19 @@ export const BOOK = {
   ],
 };
 
-// TODO: confirmar precios reales y costo de envío.
-export const FORMATS = {
-  ebook: {
-    key: "ebook",
-    label: "Ebook (PDF)",
-    precio: 149,
-    descripcion: "Lo recibes en tu correo en cuanto se confirma tu pago. Léelo en celular, tablet o computadora.",
-    bullets: ["Entrega inmediata y automática", "Acceso permanente", "Pago con tarjeta u OXXO"],
-  },
-  fisico: {
-    key: "fisico",
-    label: "Libro físico",
-    precio: 349,
-    envio: 99,
-    descripcion: "El libro impreso, enviado a tu domicilio en cualquier parte de México.",
-    bullets: ["Envío a todo México", "Te avisamos cuando salga tu paquete", "Pago con tarjeta u OXXO"],
-    destacado: true,
-  },
+// Venta: única opción, libro físico en Mercado Libre (cobro y envío los
+// maneja Mercado Libre).
+export const MERCADO_LIBRE = {
+  url: "https://articulo.mercadolibre.com.mx/MLM-3624594135",
+  // TODO: precio de la publicación en MXN (ej. 349). Si es null, la tarjeta
+  // dice "Ver precio en Mercado Libre". Si cambias el precio allá, cámbialo aquí.
+  price: null,
+  bullets: [
+    "Libro impreso, envío a todo México",
+    "Paga con tarjeta, OXXO o Mercado Pago",
+    "Compra protegida por Mercado Libre",
+  ],
 };
-
-// Otras tiendas. Las que tengan url "" no aparecen.
-// TODO: confirmar que el link de Mercado Libre abre la publicación correcta
-// (se armó con el código MLM6362964260) y agregar el de Amazon.
-export const STORES = [
-  {
-    key: "mercadolibre",
-    name: "Mercado Libre",
-    note: "Compra con tu cuenta de Mercado Libre y su envío.",
-    url: "https://articulo.mercadolibre.com.mx/MLM-6362964260",
-  },
-  {
-    key: "amazon",
-    name: "Amazon",
-    note: "Si ya compras en Amazon, también lo encuentras ahí.",
-    url: "",
-  },
-];
 
 // Sinopsis (contraportada). El primer elemento es la pregunta de entrada.
 export const SYNOPSIS = [
@@ -115,37 +88,26 @@ export const TESTIMONIALS = [];
 
 export const FAQ = [
   {
-    q: "¿Cómo recibo el ebook?",
-    a: "En cuanto Mercado Pago confirma tu pago, te llega un correo con el acceso a tu ebook en PDF. Si pagaste en OXXO, el correo llega cuando el pago se acredita (normalmente en minutos, a veces hasta 24 horas).",
+    q: "¿Dónde compro el libro?",
+    a: "El libro se vende en Mercado Libre. Al dar clic en \u201cComprar en Mercado Libre\u201d llegas directo a la publicación, donde pagas y eliges tu envío.",
   },
   {
-    q: "¿Cuánto tarda en llegar el libro físico?",
-    // TODO: tiempos y paquetería reales.
-    a: "Enviamos tu libro en un plazo de 2 a 3 días hábiles después de confirmar tu pago. El tiempo de entrega depende de tu ciudad; te mandamos la guía de rastreo por correo.",
+    q: "¿Cuánto tarda en llegar?",
+    a: "Mercado Libre te muestra la fecha estimada de entrega en la publicación al poner tu código postal, y te da la guía para rastrear tu paquete.",
   },
   {
     q: "¿Qué formas de pago aceptan?",
-    a: "Tarjeta de crédito o débito, saldo de Mercado Pago y efectivo en OXXO, todo a través de Mercado Pago de forma segura.",
+    a: "Las que ofrece Mercado Libre: tarjeta de crédito o débito, saldo de Mercado Pago y efectivo en OXXO, entre otras.",
   },
   {
-    q: "¿Lo venden en otras tiendas?",
-    a: "Sí. También puedes encontrarlo en Mercado Libre; los enlaces están en la sección para conseguir el libro.",
+    q: "¿Hay versión digital?",
+    a: "Por ahora el libro está disponible solo en formato impreso.",
   },
   {
     q: "¿De qué trata?",
     a: "Es un viaje personal que cuestiona la imagen de un Dios distante y castigador para descubrir uno vivo y cercano, a través de experiencias de la autora que van de lo cotidiano a lo milagroso. Habla de la fe, la oración, la intención y la conciencia.",
   },
-  {
-    q: "No me llegó mi correo, ¿qué hago?",
-    a: "Revisa tu carpeta de spam o promociones. Si no aparece, escríbenos por WhatsApp con el correo que usaste y lo resolvemos.",
-  },
 ];
-
-export function totalFor(formatKey) {
-  const f = FORMATS[formatKey];
-  if (!f) return 0;
-  return f.precio + (f.envio || 0);
-}
 
 export function money(n) {
   return `$${n.toLocaleString("es-MX")} MXN`;

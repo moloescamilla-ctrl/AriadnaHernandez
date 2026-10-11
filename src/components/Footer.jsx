@@ -13,9 +13,11 @@ export default function Footer() {
           <p className="site-footer__by">{BOOK.author}</p>
         </div>
         <div className="site-footer__links">
-          <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer">
-            WhatsApp {WHATSAPP_DISPLAY}
-          </a>
+          {WHATSAPP_NUMBER && (
+            <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer">
+              WhatsApp {WHATSAPP_DISPLAY}
+            </a>
+          )}
           {socials.map(([key, url]) => (
             <a key={key} href={url} target="_blank" rel="noreferrer">
               {SOCIAL_LABELS[key]}

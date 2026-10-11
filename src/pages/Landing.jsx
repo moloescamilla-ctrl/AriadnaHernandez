@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 import BookCover from "../components/BookCover.jsx";
@@ -11,9 +10,8 @@ import {
   CLOSING_QUESTION,
   CONTENTS,
   FAQ,
-  FORMATS,
+  MERCADO_LIBRE,
   QUOTE,
-  STORES,
   SYNOPSIS,
   TESTIMONIALS,
   money,
@@ -22,8 +20,6 @@ import "./Landing.css";
 
 export default function Landing() {
   useReveal();
-  const formats = Object.values(FORMATS);
-  const stores = STORES.filter((s) => s.url);
 
   return (
     <div className="landing">
@@ -53,7 +49,7 @@ export default function Landing() {
                 Ver el índice
               </a>
             </div>
-            <p className="hero__formats">Ebook · Libro físico con envío a todo México</p>
+            <p className="hero__formats">Libro impreso · Envío a todo México con Mercado Libre</p>
           </div>
           <div className="hero__book">
             <Sunburst className="hero__sun" rays={18} />
@@ -156,60 +152,42 @@ export default function Landing() {
         </section>
       )}
 
-      {/* ── Formatos ───────────────────────────────────────── */}
+      {/* ── Compra (Mercado Libre) ────────────────────────── */}
       <section className="section formats" id="formatos">
         <div className="container">
           <div className="formats__head reveal">
             <p className="eyebrow">Consíguelo</p>
-            <h2>Elige cómo quieres leerlo</h2>
+            <h2>Llévalo a casa</h2>
             <BrushStroke className="formats__stroke" color="var(--lavender)" />
           </div>
 
-          <div className="formats__grid">
-            {formats.map((f) => (
-              <article
-                className={f.destacado ? "format reveal format--featured" : "format reveal"}
-                key={f.key}
-              >
-                {f.destacado && <p className="format__badge">Más elegido</p>}
-                <h3>{f.label}</h3>
-                <p className="format__price">
-                  {money(f.precio)}
-                  {f.envio ? <span> + {money(f.envio)} de envío</span> : null}
-                </p>
-                <p className="format__desc">{f.descripcion}</p>
-                <ul>
-                  {f.bullets.map((b) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
-                <Link
-                  to={`/comprar/${f.key}`}
-                  className={f.destacado ? "btn btn-gold btn-block" : "btn btn-primary btn-block"}
-                >
-                  Comprar {f.key === "ebook" ? "ebook" : "libro físico"}
-                </Link>
-              </article>
-            ))}
-          </div>
-
-          <p className="formats__pay">
-            Pago seguro con Mercado Pago: tarjeta de crédito o débito, saldo Mercado Pago u OXXO.
-          </p>
-
-          {stores.length > 0 && (
-            <div className="stores reveal">
-              <p>También disponible en</p>
-              <div className="stores__list">
-                {stores.map((s) => (
-                  <a key={s.key} href={s.url} target="_blank" rel="noreferrer" className="store">
-                    <strong>{s.name}</strong>
-                    <span>{s.note}</span>
-                  </a>
-                ))}
-              </div>
+          <article className="buy reveal">
+            <div className="buy__cover">
+              <BookCover />
             </div>
-          )}
+            <div className="buy__body">
+              <p className="buy__label">Libro impreso</p>
+              <h3>{BOOK.title}</h3>
+              <p className={MERCADO_LIBRE.price ? "buy__price" : "buy__price buy__price--pending"}>
+                {MERCADO_LIBRE.price ? money(MERCADO_LIBRE.price) : "Ver precio en Mercado Libre"}
+              </p>
+              <ul>
+                {MERCADO_LIBRE.bullets.map((b) => (
+                  <li key={b}>{b}</li>
+                ))}
+              </ul>
+              <a
+                href={MERCADO_LIBRE.url}
+                target="_blank"
+                rel="noopener"
+                className="btn btn-gold btn-block buy__cta"
+              >
+                Comprar en Mercado Libre
+                <span aria-hidden="true">↗</span>
+              </a>
+              <p className="buy__note">Se abre la publicación en Mercado Libre, donde completas tu compra.</p>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -236,8 +214,8 @@ export default function Landing() {
         <div className="container closing__inner reveal">
           <Ripples className="closing__ripples" />
           <h2>{CLOSING_QUESTION}</h2>
-          <a href="#formatos" className="btn btn-gold">
-            Quiero el libro
+          <a href={MERCADO_LIBRE.url} target="_blank" rel="noopener" className="btn btn-gold">
+            Comprar en Mercado Libre <span aria-hidden="true">↗</span>
           </a>
         </div>
       </section>

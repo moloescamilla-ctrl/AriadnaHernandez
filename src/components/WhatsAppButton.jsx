@@ -2,6 +2,7 @@ import { WHATSAPP_NUMBER } from "../data/config.js";
 import "./WhatsAppButton.css";
 
 export default function WhatsAppButton() {
+  if (!WHATSAPP_NUMBER) return null;
   return (
     <a
       className="whatsapp-fab"
