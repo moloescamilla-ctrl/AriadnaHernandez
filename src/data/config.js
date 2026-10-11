@@ -38,6 +38,7 @@ export const MERCADO_LIBRE = {
   // dice "Ver precio en Mercado Libre". Si cambias el precio allá, cámbialo aquí.
   price: null,
   bullets: [
+    "Envío gratis",
     "Libro impreso, envío a todo México",
     "Paga con tarjeta, OXXO o Mercado Pago",
     "Compra protegida por Mercado Libre",
