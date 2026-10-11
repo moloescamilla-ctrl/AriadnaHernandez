@@ -33,7 +33,7 @@ export const BOOK = {
 // Venta: única opción, libro físico en Mercado Libre (cobro y envío los
 // maneja Mercado Libre).
 export const MERCADO_LIBRE = {
-  url: "https://articulo.mercadolibre.com.mx/MLM-3624594135",
+  url: "https://articulo.mercadolibre.com.mx/MLM-6380034056",
   // TODO: precio de la publicación en MXN (ej. 349). Si es null, la tarjeta
   // dice "Ver precio en Mercado Libre". Si cambias el precio allá, cámbialo aquí.
   price: null,
