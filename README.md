@@ -1,6 +1,6 @@
 # Mi Dios no es el que me contaron — sitio del libro
 
-Sitio de venta del libro de **Ariadna Hernández**. Misma base que Faro del Infinito: React + Vite en Vercel, con Google Apps Script como backend y Mercado Pago Checkout Pro para cobrar.
+Sitio de venta del libro de **Ariadna Hernández**. Hecho con React + Vite y publicado en Vercel; la venta se hace en Mercado Libre.
 
 ## Qué hace
 
