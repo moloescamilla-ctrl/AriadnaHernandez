@@ -16,6 +16,15 @@ export const SOCIAL = {
   tiktok: "",
 };
 
+// Botones destacados a otras páginas (se muestran en el pie del sitio).
+export const FEATURED_LINKS = [
+  {
+    label: "Expresso Doble",
+    network: "Facebook",
+    url: "https://www.facebook.com/share/1HZp5TYPRY/",
+  },
+];
+
 export const BOOK = {
   title: "Mi Dios no es el que me contaron",
   author: "Ariadna Hernández",
